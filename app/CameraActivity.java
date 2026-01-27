@@ -36,7 +36,6 @@ public class CameraActivity extends Activity {
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(imageBitmap);
-        }
-    }
-}
+
+            // 이미지 처리 적용
+            Bitmap grayImage = ImageProcessor.toGrayscale(imageBitmap
