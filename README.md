@@ -1,69 +1,94 @@
-# Android Camera & Image Processing (Java)
+# 📸 Android Camera & Image Processing Project(Java)
+
+Android Studio 환경에서 **카메라 촬영 기능**과  
+촬영된 이미지를 대상으로 **전처리(Image Processing)** 를 구현한 프로젝트입니다.  
+카메라 API 활용과 이미지 처리 흐름을 이해하는 것을 목표로 진행하였습니다.
+
+---
 
 ## 📌 프로젝트 개요
-본 프로젝트는 **Android Studio(Java)** 환경에서 카메라 기능을 구현하고,  
-촬영된 이미지를 대상으로 **기본적인 이미지 처리(Image Processing)** 를 수행한 개인 학습 프로젝트입니다.
 
-안드로이드 카메라 API의 동작 방식과 이미지 처리 흐름을 이해하는 것을 목표로 하였으며,  
-신입 개발자로서 **기능 구현 → 처리 로직 분리 → 코드 구조화**에 집중했습니다.
+- **개발 목적**  
+  Android 카메라 기능 구현을 통해 모바일 환경에서의  
+  이미지 취득 및 전처리 과정 이해
 
----
+- **개발 형태**  
+  개인 프로젝트
 
-## 🛠 사용 기술
-- Language: **Java**
-- Platform: **Android Studio**
-- Android API: Camera / Bitmap
-- Image Processing: Pixel 접근 기반 처리
+- **개발 기간**  
+  2023-12-21 ~ 2024-04-15
 
 ---
 
-## ✨ 주요 기능
+## 🛠 기술 스택
 
-### 1. 카메라 촬영 기능
-- Android Camera API를 활용하여 사진 촬영
-- 촬영된 이미지를 Bitmap 형태로 변환하여 처리 가능하도록 구성
-
-### 2. 이미지 흑백 변환
-- RGB 값을 직접 추출하여 Grayscale 처리
-- 픽셀 단위 연산을 통해 명도 기반 흑백 이미지 생성
-
-### 3. 노이즈(잡음) 제거
-- 인접 픽셀 평균값을 활용한 간단한 Noise Reduction 처리
-- 이미지 품질 개선 및 후처리 안정성 확보
-
-### 4. 이미지 분류 기초 처리
-- 픽셀 명도값을 기준으로 간단한 분류 기준 적용
-- 이미지 처리 로직 분리로 확장 가능 구조 설계
+- **Language** : Java  
+- **Platform** : Android  
+- **IDE** : Android Studio  
+- **API** : Android Camera API  
+- **Image Processing** : Bitmap, Canvas, Color Matrix
 
 ---
 
-## 🧩 코드 구조
+## 🧩 주요 기능
+
+### 1️⃣ 카메라 촬영 기능
+- Android Camera API를 활용한 사진 촬영
+- 촬영 후 이미지 저장 및 Bitmap 변환
+- 카메라 권한(Permission) 처리
+
+### 2️⃣ 이미지 전처리 기능
+- 촬영된 이미지 Bitmap 로딩
+- 색상 값(RGB) 조작을 통한 이미지 처리
+- 노이즈 제거 및 명암 보정 등 기본 전처리 수행
+
+### 3️⃣ 촬영 이미지 활용 흐름
+- 카메라 촬영 → 이미지 저장
+- 저장된 이미지 불러오기
+- 전처리 적용 후 화면 출력
+
+---
+
+## 🗂 프로젝트 구조
+
 Android-Camera-Image-Processing
-┣ app
-┃ ┣ CameraActivity.java # 카메라 촬영 및 화면 제어
-┃ ┣ ImageProcessor.java # 이미지 처리 로직 분리
-┃ ┗ MainActivity.java
-┗ README.md
+├─ app
+│ ├─ java
+│ │ └─ com.example.camera
+│ │ ├─ MainActivity.java
+│ │ ├─ CameraActivity.java
+│ │ └─ ImageProcessing.java
+│ │
+│ └─ res
+│ ├─ layout
+│ └─ drawable
+│
+└─ README.md
 
 
 ---
 
-## 🧠 구현 포인트
-- UI 로직과 이미지 처리 로직을 분리하여 가독성과 유지보수성 향상
-- 픽셀 단위 연산을 직접 구현하여 이미지 처리 기본 원리 이해
-- 단순 기능 구현이 아닌 **확장 가능한 구조**를 고려한 설계
-- 카메라 촬영 후 Bitmap을 ImageProcessor로 전달하여 이미지 처리 로직을 분리함
+## 📊 구현 흐름 설명
 
-
----
-
-## 🚀 향후 개선 방향
-- OpenCV 연동을 통한 고급 이미지 처리 적용
-- 카메라 권한 및 예외 처리 강화
-- 다양한 필터 기능 추가
+- 카메라 권한 요청 및 승인 확인
+- 카메라 실행 후 이미지 촬영
+- 촬영 이미지 Bitmap 변환
+- 픽셀 단위 접근을 통한 이미지 전처리
+- 처리된 이미지 UI에 출력
 
 ---
 
-## 👤 작성자
-- 김예은  
-- Software / Android & QA Background
+## ✨ 프로젝트를 통해 배운 점
+
+- Android Camera API의 동작 원리 이해
+- Bitmap 기반 이미지 처리 방식 학습
+- 모바일 환경에서의 메모리 관리 중요성 인식
+- 기능 구현 전 흐름 설계의 중요성 체감
+
+---
+
+## 🙋‍♀️ 담당 역할
+
+- Android 카메라 촬영 기능 구현
+- 이미지 전처리 로직 설계 및 개발
+- 전체 기능 흐름 설계 및 테스트
