@@ -1,5 +1,8 @@
 # 📸 Android Camera & Image Processing Project(Java)
 
+학습 목적으로 진행한 프로젝트입니다.  
+현재는 핵심 기능 실험 단계이며, UI 및 배포는 진행하지 않았습니다.
+
 Android Studio 환경에서 **카메라 촬영 기능**과  
 촬영된 이미지를 대상으로 **전처리(Image Processing)** 를 구현한 프로젝트입니다.  
 카메라 API 활용과 이미지 처리 흐름을 이해하는 것을 목표로 진행하였습니다.
